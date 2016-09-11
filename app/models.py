@@ -232,7 +232,7 @@ class User(UserMixin,db.Model):
     def followed_posts(self):
         return Post.query.join(Follow,Follow.followed_id == Post.author_id).filter(Follow.follower_id == self.id)
 
-    def to_json():
+    def to_json(self):
         json_user = {
                 'url':url_for('api.get_user',id=self.id,_external=True),
                 'username':self.username,
