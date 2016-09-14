@@ -84,7 +84,7 @@ class HerokuConfig(ProductionConfig):
         ProductionConfig.init_app(app)
 
         #handle proxy server headers
-        from werkzueg.contrib.fixers import ProxyFix
+        from werkzeug.contrib.fixers import ProxyFix
         app.wsgi_app = ProxyFix(app.wsgi_app)
 
         # log to stderr
